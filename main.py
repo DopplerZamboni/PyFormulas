@@ -1,28 +1,24 @@
 import math
 
-a = 0
-b = 0
-c = 0
-d = 0
-m = 0
-x = 0
-y = 0
-z = 0
+a,b,c,d,m,x,y,z = 0,0,0,0,0,0,0,0
 
 def getVars():
-  a = 0
-  b = 0
-  c = 0
-  d = 0
-  x = 0
-  y = 0
-  z = 0
+  
+  a,b,c,d,m,x,y,z = 0,0,0,0,0,0,0,0
+  
   while True:
     print ("1: Quadratic Equation")
     print ("2: Pythagorean Theorem")
     print ("3: Slope from two points")
     print ("")
-    type = int(input("Please enter type of equation (0 to cancel): "))
+    
+    try:
+      type = int(input("Please enter type of equation (0 to cancel): "))
+      
+    except:
+      print ("Sorry, but that input was invalid. please try again.")
+      print ("")
+      continue
     
     if type == 0:
       print ("Thanks for using this program!")
@@ -64,7 +60,6 @@ def getVars():
     else:
       print ("Invalid Type!")
   
-
 def quadratic(a, b, c):
   d = b**2-4*a*c
   if d < 0:
